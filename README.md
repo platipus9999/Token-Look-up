@@ -1,9 +1,6 @@
 # Token-Look-up
 To look up a discord token 
 
-# Ip-Grabber
-simple ip grabber
-
 --------------------------------------
 
 ### Usage
