@@ -20,7 +20,6 @@ auth = {
 
 req = requests.get("https://discordapp.com/api/v6/users/@me", headers=auth).json()
 req2 = requests.get("https://discordapp.com/api/v6/users/@me/billing/subscriptions", headers=auth).json()
-req3 = requests.get("https://discordapp.com/api/v6/users/@me/billing/payment-sources", headers=auth).json()
 
 pseudo = f'{req["username"]}'
 tag = f'{req["discriminator"]}'
@@ -50,9 +49,8 @@ for payement_info in requests.get("https://discordapp.com/api/v6/users/@me/billi
         country = info["country"]
         postal_code = info["postal_code"]
 
-nitro_data = requests.get('https://discordapp.com/api/v9/users/@me/billing/subscriptions', headers=auth).json()
 
-has_nitro = bool(len(nitro_data) > 0)
+has_nitro = bool(len(req2) > 0)
 
 if has_nitro:
     d1 = datetime.strptime(nitro_data[0]["current_period_end"].split('.')[0], "%Y-%m-%dT%H:%M:%S")
